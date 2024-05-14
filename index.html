@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>butternaan.co</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+  <style>
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #212229;
+        color: #fff;
+    }
+
+    header {
+        position: fixed;
+        top: 5px;
+        width: 98.2%;
+        height: 40px;
+        background: linear-gradient(45deg, red, orange);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 1000;
+        border-radius: 100px;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    header .logo {
+        font-size: 42px;
+        color: white;
+        animation: hoverUpDown2 1.2s ease-in-out infinite;
+    }
+
+    header nav a {
+        position: relative;
+        margin: 0 15px;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        transition: color 0.3s ease;
+        color: rgba(255, 255, 255, 0.8);
+        animation: hoverUpDown2 1.2s ease-in-out infinite;
+      
+    }
+
+    header nav a::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        display: block;
+        margin-top: 5px;
+        right: 0;
+        background: ghostwhite;
+        transition: width 0.3s ease;
+        animation: hoverUpDown2 1.2s ease-in-out infinite;
+        
+    
+    }
+
+    header nav a:hover::after {
+        width: 100%;
+        left: 0;
+        background: white;
+      
+     
+    }
+
+    header nav a:hover {
+        color: rgba(255, 255, 255, 1);
+        
+    }
+
+    .hero {
+        margin-top: 60px;
+        height: 510px;
+        background: url('https://i.ytimg.com/vi/17x9yJ-EFoo/maxresdefault.jpg') no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 100px;
+        
+      
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(33, 34, 41, 0.8);
+        backdrop-filter: blur(20px);
+        border-radius: 50px;
+    }
+
+    .hero-title {
+        font-size: 100px;
+        color: transparent;
+        background: linear-gradient(45deg, red, orange);
+        -webkit-background-clip: text;
+        background-clip: text;
+        z-index: 1;
+      animation: fadeIn 2s ease-in-out, hoverUpDown 1.2s ease-in-out infinite;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    
+    @keyframes hoverUpDown {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    @keyframes hoverUpDown2 {
+        0%, 100% { transform: translateY(5); }
+        50% { transform: translateY(-2px); }
+    }
+
+    .features {
+        padding: 40px 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .feature-container {
+        background: #303138;
+        border-radius: 100px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 100%;
+        height: 250px;
+        margin: 10px;
+        padding: 50px;
+        text-align: center;
+        transform: translateY(50px);
+        opacity: 0;
+        transition: transform 1s ease, opacity 1s ease;
+        
+        
+    }
+
+    .feature-container.in-view {
+        transform: translateY(0);
+        opacity: 1;
+       animation: hoverUpDown 1.2s ease-in-out ;
+       animation: hoverUpDown2 1.2s ease-in-out infinite;
+    }
+
+    .feature-icon {
+        font-size: 64px;
+        margin-bottom: 10px;
+      animation: hoverUpDown 1.2s ease-in-out infinite;
+    }
+
+    .feature-content h2 {
+        font-size: 48px;
+        margin: 5px 0;
+        
+    }
+
+    .feature-content p {
+        font-size: 24px;
+        color: #bdbdbd;
+    }
+
+    @media (max-width: 768px) {
+        .feature-container {
+            width: 90%;
+        }
+    }
+    footer {
+        background: linear-gradient(45deg, red, orange);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 96.7%;
+        border-radius: 100px 100px 0px 0px;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        border-radius: 100px ;
+    }
+
+    .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin: 20px;
+    }
+
+    .footer-section h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .footer-section p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-section {
+            margin: 10px 0;
+        }
+    }
+    
+
+  </style>
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const featureContainers = document.querySelectorAll('.feature-container');
+
+          const observer = new IntersectionObserver(entries => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('in-view');
+                  }
+              });
+          }, {
+              threshold: 0.1
+          });
+
+          featureContainers.forEach(container => {
+              observer.observe(container);
+          });
+      });
+  </script>
+<body>
+    <header>
+        <div class="logo">💫</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#features">Features</a>
+            <a href="#footer">About</a>
+            <a href="#footer">Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1 class="hero-title">Butternaan.co</h1>
+    </section>
+    <section id="features" class="features">
+        <div class="feature-container">
+            <div class="feature-icon">🍽️</div>
+            <div class="feature-content">
+                <h2>Feature One</h2>
+                <p>It tastes good</p>
+            </div>
+        </div>
+        <div class="feature-container">
+            <div class="feature-icon">🫓</div>
+            <div class="feature-content">
+                <h2>Feature Two</h2>
+                <p>Uh it looks better</p>
+            </div>
+        </div>
+        <div class="feature-container">
+            <div class="feature-icon">🍛</div>
+            <div class="feature-content">
+                <h2>Feature Three</h2>
+                <p>Thats it... it tastes goo-</p>
+            </div>
+        </div>
+    </section>
+  <section id="footer">
+  <footer>
+    
+      <div class="footer-container">
+          <div class="footer-section">
+              <h2>About Us</h2>
+              <p>Butter naan is traditional Indian Naan bread brushed with melted butter after cooking. You can add some minced cilantro (coriander) leaves or minced garlic to make garlic butter naan. It is a yeasted dough rolled into flatbreads and cooked traditionally in tandoor clay.</p>
+          </div>
+          <div class="footer-section">
+              <h2>Contact</h2>
+              <p>Email: dragonchicken@butternaan.paneer</p>
+              <p>Phone: e</p>
+              <p>Address: Some Palmshore</p>
+          </div>
+      </div>
+    
+  </footer>
+  </section>
+
+  
+</body>
+</html>
